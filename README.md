@@ -4,9 +4,9 @@ This tool instantly converts JSON into a Go Interface Map representation. Paste 
 
 ### To run
 
-`yarn && yarn start` - Download dependencies and run
-`yarn test` - Run tests
-`yarn build` - Build production version
+`yarn && yarn start` - Download dependencies and run<br>
+`yarn test` - Run tests<br>
+`yarn build` - Build production version<br>
 
 
 ### TODO
