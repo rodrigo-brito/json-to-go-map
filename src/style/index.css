@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700');
+/* Typo */
+html, body {
+    font-family: 'Open Sans', sans-serif;
+}
+
+.xl {
+    font-size: 20px
+}
+
+.text-center {
+    text-align: center;
+}
+
+/* Grid */
+.grid{
+    display: flex;
+    align-items: stretch;
+}
+
+.grid .col-2 {
+    flex: 2
+}
+
+.grid .col-5 {
+    flex: 5;
+}
+
+/* Content */
+* {
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+}
+
+html, body, #root {
+    height: 100%;
+}
+
+footer {
+    padding: 20px;
+}
+
+.main-content {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.intro {
+    padding: 20px;
+}
+
+.info-editor {
+    background: #4286f4;
+    color: #fff;
+    padding: 10px;
+}
+
+.result-panel {
+    flex: 1;
+    display: flex;
+    align-items: stretch;
+}
+
+.text-box {
+    flex: 1;
+    padding: 20px;
+    border: 1px solid #222;
+    overflow: scroll;
+}
