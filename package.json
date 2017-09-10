@@ -2,6 +2,7 @@
   "name": "json-to-go-map",
   "version": "0.1.0",
   "private": true,
+  "homepage": ".",
   "dependencies": {
     "@types/jest": "^20.0.8",
     "react": "^15.6.1",
