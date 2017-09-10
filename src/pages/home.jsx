@@ -6,6 +6,12 @@ export default function(){
         <main className="main-content">
             <header>
                 <div className="intro">
+                    <div className="git-buttons">
+                        <p>
+                            <a className="github-button" href="https://github.com/rodrigo-brito/json-to-go-map" data-size="large" data-show-count="true" aria-label="Star rodrigo-brito/json-to-go-map on GitHub">Star </a>
+                            <a className="github-button" href="https://github.com/rodrigo-brito/json-to-go-map/fork" data-icon="octicon-repo-forked" data-size="large" data-show-count="true" aria-label="Fork rodrigo-brito/json-to-go-map on GitHub">Fork</a>
+                        </p>
+                    </div>
                     <h1>JSON to Golang Map</h1>
                     <h2>Convert JSON to Golang Map Interface</h2>
                     <p>

@@ -1,0 +1,34 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`the jsonToGoMap converter when a complex object is given 1`] = `
+"map[string]interface{}{
+	\\"array\\": []interface{}{
+		\\"A\\",
+		\\"B\\",
+		1,
+	},
+	\\"foo\\": map[string]interface{}{
+		\\"bar\\": 0.5,
+	},
+}"
+`;
+
+exports[`the jsonToGoMap converter when a simple key/value object is given, it should return a valid result 1`] = `
+"map[string]interface{}{
+	\\"key\\": \\"value\\",
+}"
+`;
+
+exports[`the jsonToGoMap converter when array is given, it should return a interface list 1`] = `
+"[]interface{}{
+	\\"A\\",
+	\\"B\\",
+	1,
+}"
+`;
+
+exports[`the jsonToGoMap converter when null value is given, it should return a valid result 1`] = `
+"map[string]interface{}{
+	\\"key\\": nil,
+}"
+`;

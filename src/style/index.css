@@ -4,6 +4,12 @@ html, body {
     font-family: 'Open Sans', sans-serif;
 }
 
+a {
+  color: #4286f4;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
 .xl {
     font-size: 20px
 }
@@ -51,6 +57,15 @@ footer {
     padding: 20px;
 }
 
+.intro .git-buttons {
+    display: table;
+    float: right;
+}
+
+.intro .git-buttons iframe {
+    margin: 0 10px;
+}
+
 .info-editor {
     background: #4286f4;
     color: #fff;
@@ -66,6 +81,6 @@ footer {
 .text-box {
     flex: 1;
     padding: 20px;
-    border: 1px solid #222;
+    border: 1px solid #ccc;
     overflow: scroll;
 }

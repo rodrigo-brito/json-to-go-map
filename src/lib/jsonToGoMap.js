@@ -20,7 +20,7 @@ function jsonToMap(obj, tabLevel = 1){
         return `[]interface{}{\n${output}\n${getTabs(tabLevel-1)}}`
     } else if (isObject(obj)) {
         const values = Object.keys(obj).map(key => {
-            return `${getTabs(tabLevel)}"${key}":${jsonToMap(obj[key], tabLevel + 1)},`
+            return `${getTabs(tabLevel)}"${key}": ${jsonToMap(obj[key], tabLevel + 1)},`
         })
         const output = values.join("\n")
         return `map[string]interface{}{\n${output}\n${getTabs(tabLevel - 1)}}`
