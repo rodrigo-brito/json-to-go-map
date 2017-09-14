@@ -13,9 +13,9 @@ This tool instantly converts JSON into a Go Interface Map representation. Paste 
 
 ### TODO
 
-- Highlight syntax
-- Improve code ident (gofmt)
-- Write component tests
+- Output highlight syntax
+- Improve output code ident (gofmt)
+- Improve React component tests
 - Include "Copy to clipboard" button
 
 ### Similar projects
