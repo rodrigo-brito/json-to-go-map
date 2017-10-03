@@ -8,7 +8,6 @@ export default class Converter extends React.Component {
         this.onChange = this.onChange.bind(this);
         this.state = {
             result: "",
-            value: '',
             copied: false,
         }
     }
