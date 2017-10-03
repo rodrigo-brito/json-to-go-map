@@ -5,7 +5,8 @@
   "homepage": ".",
   "dependencies": {
     "@types/jest": "^20.0.8",
-    "react": "^15.6.1",
+    "react": "^15.6.2",
+    "react-copy-to-clipboard": "^5.0.1",
     "react-dom": "^15.6.1",
     "react-scripts": "1.0.13"
   },
