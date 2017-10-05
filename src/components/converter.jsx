@@ -20,7 +20,7 @@ export default class Converter extends React.Component{
     render() {
         return (
             <div className="result-panel">
-                <textarea placeholder="Past your JSON here"
+                <textarea placeholder="Paste your JSON here"
                     onChange={this.onChange}
                     className="text-box" />
                 <div className="text-box">
