@@ -10,6 +10,7 @@ class Converter extends PureComponent {
 
   onChange = ({ target: { value } }) => {
     let result = jsonToGoMap(value);
+
     this.setState({
       result
     });
@@ -33,7 +34,7 @@ class Converter extends PureComponent {
               <button>Copy to Clipboard</button>
             </CopyToClipboard>
           )}
-          {copied && <span style={{ color: "red" }}>Copied.</span>}
+          {copied && <span className="copied-span">Copied!</span>}
           <pre>{result}</pre>
         </div>
       </div>
