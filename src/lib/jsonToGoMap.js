@@ -1,52 +1,48 @@
 const isObject = obj => obj === Object(obj);
 
 const getTabs = numberTabs => {
-  let result = "";
-  for (let i = 0; i < numberTabs; i++) {
-    result += "\t";
-  }
+    let result = "";
+    for (let i = 0; i < numberTabs; i++) {
+        result += "\t";
+    }
 
-  return result;
+    return result;
 };
 
 const jsonToMap = (obj, tabLevel = 1) => {
-  if (obj === null || obj === undefined) {
-    return "nil";
-  } else if (Array.isArray(obj)) {
-    const output = obj
-      .map(key => {
-        return `${getTabs(tabLevel)}${jsonToMap(key, tabLevel + 1)},`;
-      })
-      .join("\n");
+    if (obj === null || obj === undefined) {
+        return "nil";
+    } else if (Array.isArray(obj)) {
+        const output = obj
+            .map(key => `${getTabs(tabLevel)}${jsonToMap(key, tabLevel + 1)},`)
+            .join("\n");
 
-    return `[]interface{}{\n${output}\n${getTabs(tabLevel - 1)}}`;
-  } else if (isObject(obj)) {
-    const values = Object.keys(obj).map(key => {
-      return `${getTabs(tabLevel)}"${key}": ${jsonToMap(
-        obj[key],
-        tabLevel + 1
-      )},`;
-    });
-    const output = values.join("\n");
+        return `[]interface{}{\n${output}\n${getTabs(tabLevel - 1)}}`;
+    } else if (isObject(obj)) {
+        const values = Object.keys(obj).map(
+            key =>
+                `${getTabs(tabLevel)}"${key}": ${jsonToMap(obj[key], tabLevel + 1)},`
+        );
+        const output = values.join("\n");
 
-    return `map[string]interface{}{\n${output}\n${getTabs(tabLevel - 1)}}`;
-  }
+        return `map[string]interface{}{\n${output}\n${getTabs(tabLevel - 1)}}`;
+    }
 
-  return JSON.stringify(obj);
+    return JSON.stringify(obj);
 };
 
 const convert = jsonString => {
-  if (!jsonString) {
-    return "";
-  }
+    if (!jsonString) {
+        return "";
+    }
 
-  try {
-    const parseObect = JSON.parse(jsonString);
+    try {
+        const parsedObject = JSON.parse(jsonString);
 
-    return jsonToMap(parseObect);
-  } catch (e) {
-    return e.message;
-  }
+        return jsonToMap(parsedObject);
+    } catch (e) {
+        return e.message;
+    }
 };
 
 export default convert;
