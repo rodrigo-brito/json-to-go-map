@@ -15,6 +15,8 @@ class Converter extends PureComponent {
     });
   };
 
+  setCopiedToTrue = () => this.setState({ copied: true });
+
   render() {
     return (
       <div className="result-panel">
@@ -25,19 +27,15 @@ class Converter extends PureComponent {
         />
         <div className="text-box">
           <pre>{this.state.result}</pre>
-          {this.state.result ? (
+          {this.state.result && (
             <CopyToClipboard
               text={this.state.result}
-              onCopy={() => this.setState({ copied: true })}
+              onCopy={this.setCopiedToTrue}
             >
               <button>Copy to Clipboard</button>
             </CopyToClipboard>
-          ) : (
-            false
           )}
-          {this.state.copied ? (
-            <span style={{ color: "red" }}>Copied.</span>
-          ) : null}
+          {this.state.copied && <span style={{ color: "red" }}>Copied.</span>}
         </div>
       </div>
     );
