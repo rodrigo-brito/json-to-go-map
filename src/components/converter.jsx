@@ -4,14 +4,18 @@ import { CopyToClipboard } from "react-copy-to-clipboard";
 
 class Converter extends PureComponent {
   state = {
-    result: "",
-    copied: false
+    copied: false,
+    isResultValid: false,
+    result: ""
   };
 
   onChange = ({ target: { value } }) => {
-    let result = jsonToGoMap(value);
+    const result = jsonToGoMap(value);
+    const isResultValid = !result.match(/Unexpected/i);
 
     this.setState({
+      copied: false,
+      isResultValid,
       result
     });
   };
@@ -19,7 +23,7 @@ class Converter extends PureComponent {
   setCopiedToTrue = () => this.setState({ copied: true });
 
   render() {
-    const { copied, result } = this.state;
+    const { copied, isResultValid, result } = this.state;
 
     return (
       <div className="result-panel">
@@ -29,11 +33,12 @@ class Converter extends PureComponent {
           className="text-box"
         />
         <div className="text-box">
-          {result && (
-            <CopyToClipboard text={result} onCopy={this.setCopiedToTrue}>
-              <button>Copy to Clipboard</button>
-            </CopyToClipboard>
-          )}
+          {result &&
+            isResultValid && (
+              <CopyToClipboard text={result} onCopy={this.setCopiedToTrue}>
+                <button>Copy to Clipboard</button>
+              </CopyToClipboard>
+            )}
           {copied && <span className="copied-span">Copied!</span>}
           <pre>{result}</pre>
         </div>
