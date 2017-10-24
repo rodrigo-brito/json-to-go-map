@@ -1,5 +1,13 @@
-const isObject = obj => obj === Object(obj);
+/**
+ * Return whether obj is an Object
+ * @param {any} obj 
+ */
+const isObject = obj => typeof obj === "object" && obj !== null;
 
+/**
+ * Return a string with a given number of tabs
+ * @param {number} numberTabs number of tabs to indent
+ */
 const getTabs = numberTabs => {
     let result = "";
     for (let i = 0; i < numberTabs; i++) {
@@ -9,6 +17,13 @@ const getTabs = numberTabs => {
     return result;
 };
 
+/**
+ * Recursive function to convert json to a map
+ * Converts arrays to slices and objects to maps
+ * @param {object} obj to convert to golang map
+ * @param {number} tabLevel indentation level
+ * @returns the golang map
+ */
 const jsonToMap = (obj, tabLevel = 1) => {
     if (obj === null || obj === undefined) {
         return "nil";
@@ -31,6 +46,12 @@ const jsonToMap = (obj, tabLevel = 1) => {
     return JSON.stringify(obj);
 };
 
+/**
+ * Get convert a json string to a golang map
+ * @param {string} jsonString
+ * @returns the golang map string or an error string if conversion
+ * is unsuccessful
+ */
 const convert = jsonString => {
     if (!jsonString) {
         return "";
