@@ -1,12 +1,14 @@
 /**
  * Return whether obj is an Object
  * @param {any} obj 
+ * @returns whether obj is an object
  */
 const isObject = obj => typeof obj === "object" && obj !== null;
 
 /**
  * Return a string with a given number of tabs
  * @param {number} numberTabs number of tabs to indent
+ * @return a string of tabs
  */
 const getTabs = numberTabs => {
     let result = "";
