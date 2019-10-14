@@ -15,7 +15,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
-    "coverage": "yarn test -- --coverage"
+    "coverage": "yarn test --coverage && cat ./coverage/lcov.info | coveralls"
   },
   "jest": {
     "coverageReporters": [
@@ -25,5 +25,8 @@
       "text",
       "clover"
     ]
+  },
+  "devDependencies": {
+    "coveralls": "^3.0.7"
   }
 }
