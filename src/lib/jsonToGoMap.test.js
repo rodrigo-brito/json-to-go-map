@@ -1,15 +1,15 @@
 import jsonToMap from "./jsonToGoMap";
 describe("the jsonToGoMap converter", () => {
-    test("when a empty string is given, it should return a empty result", () => {
+    test("when an empty value is given, it should return an empty string", () => {
         const result = jsonToMap("");
         expect(result).toEqual("");
     });
     
-    test("when a invalid JSON is given, it should return a error mensage", () => {
+    test("when an invalid JSON is given, it should return an error mensage", () => {
         const result = jsonToMap(`{"test": invalid`);
         expect(result).toEqual("Unexpected token i in JSON at position 9");
     });
-    
+
     test("when a simple key/value object is given, it should return a valid result", () => {
         const result = jsonToMap(`{"key": "value"}`);
         expect(result).toMatchSnapshot();
@@ -20,7 +20,7 @@ describe("the jsonToGoMap converter", () => {
         expect(result).toMatchSnapshot();
     });
 
-    test("when array is given, it should return a interface list", () => {
+    test("when array is given, it should return an interface list", () => {
         const result = jsonToMap(`["A", "B", 1]`);
         expect(result).toMatchSnapshot();
     });
