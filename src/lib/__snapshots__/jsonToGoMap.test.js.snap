@@ -19,7 +19,7 @@ exports[`the jsonToGoMap converter when a simple key/value object is given, it s
 }"
 `;
 
-exports[`the jsonToGoMap converter when array is given, it should return a interface list 1`] = `
+exports[`the jsonToGoMap converter when array is given, it should return an interface list 1`] = `
 "[]interface{}{
 	\\"A\\",
 	\\"B\\",
