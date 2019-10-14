@@ -1,5 +1,6 @@
 # Convert JSON to Go Map Interface
 [![Build Status](https://api.travis-ci.org/rodrigo-brito/json-to-go-map.svg?branch=master)](https://travis-ci.org/rodrigo-brito/json-to-go-map)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 Online Tool - https://rodrigo-brito.github.io/json-to-go-map/
 
