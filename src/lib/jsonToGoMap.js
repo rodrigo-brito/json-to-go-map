@@ -34,7 +34,7 @@ const jsonToMap = (obj, tabLevel = 1) => {
             .map(key => `${getTabs(tabLevel)}${jsonToMap(key, tabLevel + 1)},`)
             .join("\n");
 
-        return `[]interface{}{\n${output}\n${getTabs(tabLevel - 1)}}`;
+        return `[]any{\n${output}\n${getTabs(tabLevel - 1)}}`;
     } else if (isObject(obj)) {
         const values = Object.keys(obj).map(
             key =>
@@ -42,7 +42,7 @@ const jsonToMap = (obj, tabLevel = 1) => {
         );
         const output = values.join("\n");
 
-        return `map[string]interface{}{\n${output}\n${getTabs(tabLevel - 1)}}`;
+        return `map[string]any{\n${output}\n${getTabs(tabLevel - 1)}}`;
     }
 
     return JSON.stringify(obj);
